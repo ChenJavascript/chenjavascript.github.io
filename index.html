@@ -1,101 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-	<title>胸毛仙人个人博客</title>
+	<title>胸毛仙人</title>
 	<link rel="stylesheet" type="text/css" href="./css/base.css">
+	<link rel="stylesheet" type="text/css" href="./css/prism.css">
 	<link href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="./js/prism.js"></script>
 </head>
-<body>
-<div class="container">
-  <div class="row header">
-    <h1>胸毛仙人——笔记</h1>
-  </div>
-  <div class="row main">
-    <div class="col-sm-8 main_left">
-    	<div class="blog-post">
-            <h2 class="blog-post-title">js无缝滚动</h2>
-            <p class="blog-post-meta">March 12, 2017 by <a href="#">chensk</a></p>
-            <pre>
-            //scrollTop 向上滚动数值
-            //offsetHeight 元素高度
-            //setInterval 按指定周期执行
-            //clearInterval 清除执行
-
-            var area = document.getElementById("con");
-            var scroll1 = document.getElementById('scroll1');
-            var scroll2 = document.getElementById('scroll2');
-            scroll2.innerHTML = scroll1.innerHTML;
-            function scrollUp(){
-                if(area.scrollTop >= scroll1.offsetHeight){
-                    area.scrollTop = 0;
-                }else{
-                    area.scrollTop++;
-                }
-            }
-
-            var time = 50;
-            var myScroll =  setInterval('scrollUp()',time);
-
-            area.onmouseover = function(){
-                clearInterval(myScroll);
-            }
-            area.onmouseout = function(){
-                myScroll =  setInterval('scrollUp()',time);
-            }
-            </pre>
-        </div>
-    	<div class="blog-post">
-            <h2 class="blog-post-title">当前时间（动态），倒计时时间（动态）</h2>
-            <p class="blog-post-meta">February 1, 2017 by <a href="#">chensk</a></p>
-            <pre>
-            function checkTime(i){
-                if (i<10) {
-                    i="0"+i;
-                }
-                return i;
-            }
-             function newTime(){
-                    var endtime = new Date("2016/5/28,00:00:00");
-                    var nowtime = new Date();
-                    var lefttime = parseInt((endtime.getTime()-nowtime.getTime())/1000);
-                    var d = parseInt(lefttime/(24*60*60));
-                    var h = parseInt(lefttime/(60*60)%24);
-                    var m = parseInt(lefttime/60%60);
-                    var s = parseInt(lefttime%60);
-                    m = checkTime(m);
-                    s = checkTime(s);
-                    document.getElementById('newtime').innerHTML = d+'天'+h+'小时'+m+'分钟'+s+'秒';
-                    setTimeout(newTime,500);
-             }
-
-             function oldTime(){
-                 var starttime = new Date("2015/5/28,00:00:00");
-                 var nowtime = new Date();
-                 var lefttime = parseInt((nowtime.getTime()-starttime.getTime())/1000);
-                 var d = parseInt(lefttime/(24*60*60));
-                var h = parseInt(lefttime/(60*60)%24);
-                var m = parseInt(lefttime/60%60);
-                var s = parseInt(lefttime%60);
-                m = checkTime(m);
-                s = checkTime(s);
-                document.getElementById('oldtime').innerHTML = d+'天'+h+'小时'+m+'分钟'+s+'秒';
-                 setTimeout(oldTime,500);
-             }
-            </pre>
+<body class="main">
+<div class="main-header">
+	<div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1><a href="http://webres.wang/" title="" data-original-title="胸毛仙人"> 胸毛仙人个人笔记</a></h1>
+                <h2 class="h4">Happy Life, Happy Coding!</h2>
+            </div>
         </div>
     </div>
-    <div class="col-sm-3 main_right">
-    	<div class="sidebar-module">
-            <h4>Archives</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">March 2017</a></li>
-              <li><a href="#">February 2017</a></li>
-            </ol>
-          </div>
-    </div>
-  </div>
+</div>
+<section class="content-wrap">
+	<div class="container">
+		<div class="row">
+			<main class="col-md-8 main-content ">
+				<div class="article">
+		            <h2>js无缝滚动</h2>
+		            <pre class="language-javascript" data-language="javascript">
+		            <code class="language-javascript">
+		            //scrollTop 向上滚动数值
+		            //offsetHeight 元素高度
+		            //setInterval 按指定周期执行
+		            //clearInterval 清除执行
+		            var area = document.getElementById("con");
+		            var scroll1 = document.getElementById('scroll1');
+		            var scroll2 = document.getElementById('scroll2');
+		            scroll2.innerHTML = scroll1.innerHTML;
+		            function scrollUp(){
+		                if(area.scrollTop >= scroll1.offsetHeight){
+		                    area.scrollTop = 0;
+		                }else{
+		                    area.scrollTop++;
+		                }
+		            }
+
+		            var time = 50;
+		            var myScroll =  setInterval('scrollUp()',time);
+
+		            area.onmouseover = function(){
+		                clearInterval(myScroll);
+		            }
+		            area.onmouseout = function(){
+		                myScroll =  setInterval('scrollUp()',time);
+		            }
+		            </code>
+		            </pre>
+		        </div>
+			</main>
+			<aside class="col-md-4 sidebar">
+			<div class="affix-top">
+				<aside id="search-2" class="widget widget_search clearfix">
+					<h4 class="title">微信二维码</h4>
+					<div class="textwidget"><div><img src="./images/csk.jpg"></div></div>
+			</aside>
+			</div>
+			</aside>
+		</div>
+	</div>
+</section>
+
+
+
   <div class="row footer">
     chensk.home@gmail.com
   </div>

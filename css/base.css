@@ -1,13 +1,47 @@
-.header{
-	padding-top: 20px;
-	padding-bottom: 20px;
+.main{
+    color: #505050;
+    line-height: 1.75em;
+    background: #ebebeb;
+    position: relative;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
 }
-.main_left{
-	font-size: 18px;
-	line-height: 1.5;
+.main-header{
+    text-align: center;
+    padding: 42px 0;
+    background: #f4645f;
+    margin-bottom: 50px;
 }
-.main_right{
-	margin-left: 8%;
+.main-header h1 a,.main-header h2 {
+    color: #FFF;
+}
+.main-navigation{
+    text-align: center;
+    background: #ffffff;
+    border-top: 1px solid #ebebeb;
+    margin-bottom: 35px;
+    border-bottom: 2px solid #e1e1e1;
+}
+.article{
+    padding: 35px;
+    background: #ffffff;
+    margin-bottom: 35px;
+    position: relative;
+    overflow: hidden;
+}
+.sidebar .widget {
+    background: #ffffff;
+    padding: 21px 30px;
+}
+.widget,.title{
+    margin-top: 0;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #ebebeb;
+    margin-bottom: 21px;
+    position: relative;
+}
+img {
+    max-width: 100%;
+    height: auto;
 }
 .footer{
 	margin-top: 20px;
