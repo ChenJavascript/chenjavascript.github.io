@@ -9,18 +9,19 @@
     text-align: center;
     padding: 42px 0;
     background: #f4645f;
-    margin-bottom: 50px;
 }
 .main-header h1 a,.main-header h2 {
     color: #FFF;
 }
+
 .main-navigation{
-    text-align: center;
+	text-align: center;
     background: #ffffff;
     border-top: 1px solid #ebebeb;
     margin-bottom: 35px;
     border-bottom: 2px solid #e1e1e1;
 }
+
 .article{
     padding: 35px;
     background: #ffffff;
@@ -44,5 +45,10 @@ img {
     height: auto;
 }
 .footer{
-	margin-top: 20px;
+    background: #202020;
+    padding: 35px 0 0;
+    color: #959595;
+}
+.footer-content{
+	padding-bottom: 50px;
 }
