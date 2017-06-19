@@ -37,6 +37,23 @@
 		            <h2>js无缝滚动</h2>
 		            <pre class="language-javascript" data-language="javascript">
 		            <code class="language-javascript">
+		            &lt;div id="con">
+			            &lt;ul id="scroll1">
+			              &lt;li style="margin-top: -10px;">hello,world0&lt;/li>
+			              &lt;li >hello,world1&lt;/li>
+			              &lt;li >hello,world2&lt;/li>
+			              &lt;li >hello,world3&lt;/li>
+			              &lt;li >hello,world4&lt;/li>
+			              &lt;li >hello,world5&lt;/li>
+			              &lt;li >hello,world6&lt;/li>
+			              &lt;li >hello,world7&lt;/li>
+			              &lt;li >hello,world8&lt;/li>
+			              &lt;li >hello,world9&lt;/li>
+			            &lt;/ul>
+			            &lt;ul id="scroll2" >
+			            &lt;/ul>
+			        &lt;/div>
+			        
 		            //scrollTop 向上滚动数值
 		            //offsetHeight 元素高度
 		            //setInterval 按指定周期执行
@@ -63,6 +80,59 @@
 		                myScroll =  setInterval('scrollUp()',time);
 		            }
 		            </code>
+		            </pre>
+		        </div>
+				<div class="article">
+		            <h2>js 间歇性无缝滚动</h2>
+		            <pre class="language-markup" data->
+		            	<code class="language-markup">
+	            		&lt;div id="con">
+				            &lt;ul id="scroll1">
+				              &lt;li style="margin-top: -10px;">hello,world0&lt;/li>
+				              &lt;li >hello,world1&lt;/li>
+				              &lt;li >hello,world2&lt;/li>
+				              &lt;li >hello,world3&lt;/li>
+				              &lt;li >hello,world4&lt;/li>
+				              &lt;li >hello,world5&lt;/li>
+				              &lt;li >hello,world6&lt;/li>
+				              &lt;li >hello,world7&lt;/li>
+				              &lt;li >hello,world8&lt;/li>
+				              &lt;li >hello,world9&lt;/li>
+				            &lt;/ul>
+				            &lt;ul id="scroll2" >
+				            &lt;/ul>
+				        &lt;/div>
+
+				        //scrollTop 向上滚动数值
+			            //offsetHeight 元素高度
+			            //setInterval 按指定周期执行
+			            //clearInterval 清除执行
+
+			            var area = document.getElementById("con");
+			            var iLiHeight = 20;
+			            var time;
+			            var speed = 50;
+			            var delay = 2000;
+			            area.innerHTML += area.innerHTML;
+			            area.scrollTop = 0;
+
+			            function startMove(){
+			                area.scrollTop++;
+			                time =  setInterval('scrollUp()',speed);
+			            }
+			            function scrollUp(){
+			                if (area.scrollTop % iLiHeight == 0) {
+			                    clearInterval(time);
+			                    setTimeout("startMove()",delay);
+			                }else{
+			                    area.scrollTop++;
+			                    if (area.scrollTop >= area.scrollHeight/2) {
+			                        area.scrollTop=0;
+			                    }
+			                }
+			            }
+			            setTimeout("startMove()",delay);
+		            	</code>
 		            </pre>
 		        </div>
 			</main>
