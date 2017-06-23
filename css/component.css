@@ -56,7 +56,7 @@ html, body, .perspective {
 
 /* Modal view */
 .perspective.modalview {
-	position: fixed;
+	/*position: fixed;*/
 	-webkit-perspective: 1500px;
 	perspective: 1500px;
 }
