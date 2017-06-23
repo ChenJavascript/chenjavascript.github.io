@@ -5,157 +5,50 @@
 	<link rel="stylesheet" type="text/css" href="./css/base.css">
 	<link rel="stylesheet" type="text/css" href="./css/prism.css">
 	<link href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="shortcut icon" href="../favicon.ico">
+	<link rel="stylesheet" type="text/css" href="./css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="./css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="./css/component.css" />
+
+
 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="./js/prism.js"></script>
+	<script src="./js/modernizr.custom.25376.js"></script>
 </head>
-<body class="main">
-<div class="main-header">
-	<div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <h1><a href="#" title="" data-original-title="胸毛仙人"> 胸毛仙人个人笔记</a></h1>
-                <h2 class="h4">Happy Life, Happy Coding!</h2>
-            </div>
-        </div>
-    </div>
-</div>
-<nav class="main-navigation">
-<div class="container">
-	<div class="row">
-		<div class="col-sm-12">
-			chensk.home@gmail.com
-		</div>
-	</div>
-</div>
-</nav>
-<section class="content-wrap">
-	<div class="container">
-		<div class="row">
-			<main class="col-md-8 main-content ">
-				<div class="article">
-		            <h2>js无缝滚动</h2>
-		            <pre class="language-javascript" data-language="javascript">
-		            <code class="language-javascript">
-		            &lt;div id="con">
-			            &lt;ul id="scroll1">
-			              &lt;li style="margin-top: -10px;">hello,world0&lt;/li>
-			              &lt;li >hello,world1&lt;/li>
-			              &lt;li >hello,world2&lt;/li>
-			              &lt;li >hello,world3&lt;/li>
-			              &lt;li >hello,world4&lt;/li>
-			              &lt;li >hello,world5&lt;/li>
-			              &lt;li >hello,world6&lt;/li>
-			              &lt;li >hello,world7&lt;/li>
-			              &lt;li >hello,world8&lt;/li>
-			              &lt;li >hello,world9&lt;/li>
-			            &lt;/ul>
-			            &lt;ul id="scroll2" >
-			            &lt;/ul>
-			        &lt;/div>
-			        
-		            //scrollTop 向上滚动数值
-		            //offsetHeight 元素高度
-		            //setInterval 按指定周期执行
-		            //clearInterval 清除执行
-		            var area = document.getElementById("con");
-		            var scroll1 = document.getElementById('scroll1');
-		            var scroll2 = document.getElementById('scroll2');
-		            scroll2.innerHTML = scroll1.innerHTML;
-		            function scrollUp(){
-		                if(area.scrollTop >= scroll1.offsetHeight){
-		                    area.scrollTop = 0;
-		                }else{
-		                    area.scrollTop++;
-		                }
-		            }
-
-		            var time = 50;
-		            var myScroll =  setInterval('scrollUp()',time);
-
-		            area.onmouseover = function(){
-		                clearInterval(myScroll);
-		            }
-		            area.onmouseout = function(){
-		                myScroll =  setInterval('scrollUp()',time);
-		            }
-		            </code>
-		            </pre>
-		        </div>
-				<div class="article">
-		            <h2>js 间歇性无缝滚动</h2>
-		            <pre class="language-markup" data->
-		            	<code class="language-markup">
-	            		&lt;div id="con">
-				            &lt;ul id="scroll1">
-				              &lt;li style="margin-top: -10px;">hello,world0&lt;/li>
-				              &lt;li >hello,world1&lt;/li>
-				              &lt;li >hello,world2&lt;/li>
-				              &lt;li >hello,world3&lt;/li>
-				              &lt;li >hello,world4&lt;/li>
-				              &lt;li >hello,world5&lt;/li>
-				              &lt;li >hello,world6&lt;/li>
-				              &lt;li >hello,world7&lt;/li>
-				              &lt;li >hello,world8&lt;/li>
-				              &lt;li >hello,world9&lt;/li>
-				            &lt;/ul>
-				            &lt;ul id="scroll2" >
-				            &lt;/ul>
-				        &lt;/div>
-
-				        //scrollTop 向上滚动数值
-			            //offsetHeight 元素高度
-			            //setInterval 按指定周期执行
-			            //clearInterval 清除执行
-
-			            var area = document.getElementById("con");
-			            var iLiHeight = 20;
-			            var time;
-			            var speed = 50;
-			            var delay = 2000;
-			            area.innerHTML += area.innerHTML;
-			            area.scrollTop = 0;
-
-			            function startMove(){
-			                area.scrollTop++;
-			                time =  setInterval('scrollUp()',speed);
-			            }
-			            function scrollUp(){
-			                if (area.scrollTop % iLiHeight == 0) {
-			                    clearInterval(time);
-			                    setTimeout("startMove()",delay);
-			                }else{
-			                    area.scrollTop++;
-			                    if (area.scrollTop >= area.scrollHeight/2) {
-			                        area.scrollTop=0;
-			                    }
-			                }
-			            }
-			            setTimeout("startMove()",delay);
-		            	</code>
-		            </pre>
-		        </div>
-			</main>
-			<aside class="col-md-4 sidebar">
-			<div class="affix-top">
-				<aside id="search-2" class="widget widget_search clearfix">
-					<h4 class="title">微信二维码</h4>
-					<div class="textwidget"><div><img src="./images/csk.jpg"></div></div>
-			</aside>
+<body>
+<div id="perspective" class="perspective effect-rotateleft">
+	<div class="container" style="width: 100%;background-color: #3498db;">
+		<div class="wrapper"><!-- wrapper needed for scroll -->
+			<div class="row">
+				<div class="col-sm-12" style="text-align: center;">
+					<div class="type-js headline" style="position: relative; display: inline-block;">
+					<div class="cursor"></div>
+					  <h1 class="text-js" style="opacity: 1;">Hello,Welcome to My Home!</h1>
+					</div>
+				</div>
 			</div>
-			</aside>
-		</div>
-	</div>
-</section>
-<div class="footer">
-	<div class="container footer-content">
-	<h4>学习资源网站：</h4>
-	<ul class="list-inline">
-		<li>
-			<a href="http://www.bootcss.com/">bootstrap中文网</a>
-		</li>
-	</ul>
-	</div>
-</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="svg-wrapper" style="cursor: pointer;">
+					  <svg height="60" width="320">
+					    <rect class="shape" height="60" width="320"></rect>
+					  </svg>
+					   <div class="text" style="cursor: pointer;" id="showMenu">let's Go</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- wrapper -->
+	</div><!-- /container -->
+	<nav class="outer-nav right vertical">
+		<a href="#" class="icon-home">个人介绍</a>
+		<a href="/note.html" class="icon-news">笔记</a>
+		<a href="#" class="icon-image">生活随写</a>
+	</nav>
+</div><!-- /perspective -->
+
+<script src="./js/base.js"></script>
+<script src="./js/classie.js"></script>
+<script src="./js/menu.js"></script>
 </body>
 </html>
